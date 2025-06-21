@@ -39,7 +39,9 @@ class ArticleController extends Controller
         }
 
         // Paginate results (default 10 per page)
-        $articles = $query->orderBy('published_at', 'desc')
+        $articles = $query
+            ->summaryFields()
+            ->latestPublished()
             ->paginate($request->get('per_page', 10));
 
         return $this->sendResponse($articles, 'Articles fetched successfully', Response::HTTP_OK);
@@ -48,8 +50,14 @@ class ArticleController extends Controller
     /**
      * Show a single article.
      */
-    public function show(Article $article)
+    public function show(Request $request)
     {
+        $article = Article::find($request->id);
+
+        if (! $article) {
+            return $this->sendResponse([], 'Article not found', Response::HTTP_NOT_FOUND);
+        }
+
         return $this->sendResponse($article, 'Article fetched successfully', Response::HTTP_OK);
     }
 }

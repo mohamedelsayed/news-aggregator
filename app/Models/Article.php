@@ -37,7 +37,7 @@ class Article extends Model
     public function scopeSearch($query, $keyword)
     {
         return $query->whereRaw(
-            "MATCH(title, description, content) AGAINST (? IN BOOLEAN MODE)",
+            'MATCH(title, description, content) AGAINST (? IN BOOLEAN MODE)',
             [$keyword]
         );
     }
@@ -64,5 +64,30 @@ class Article extends Model
     public function scopePublishedOn($query, $date)
     {
         return $query->whereDate('published_at', $date);
+    }
+
+    /**
+     * Scope to select summary fields for listing.
+     */
+    public function scopeSummaryFields($query)
+    {
+        return $query->select([
+            'id',
+            'title',
+            'description',
+            'image_url',
+            'source',
+            'author',
+            'category',
+            'published_at',
+        ]);
+    }
+
+    /**
+     * Scope to order articles by latest published date.
+     */
+    public function scopeLatestPublished($query)
+    {
+        return $query->orderBy('published_at', 'desc');
     }
 }
