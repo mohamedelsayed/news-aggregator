@@ -90,4 +90,29 @@ class Article extends Model
     {
         return $query->orderBy('published_at', 'desc');
     }
+
+    /**
+     * Scope to filter articles based on user preferences.
+     */
+    public function scopeMatchPreferences($query, $preferences)
+    {
+        if ($preferences->sources) {
+            $query->whereIn('source', $preferences->sources);
+        }
+
+        if ($preferences->categories) {
+            $query->whereIn('category', $preferences->categories);
+        }
+
+        if ($preferences->authors) {
+            $query->whereIn('author', $preferences->authors);
+        }
+
+        return $query;
+    }
+
+    public static function defaultPerPage()
+    {
+        return config('pagination.per_page');
+    }
 }

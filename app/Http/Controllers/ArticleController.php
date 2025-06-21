@@ -38,11 +38,10 @@ class ArticleController extends Controller
             $query->publishedOn($request->date);
         }
 
-        // Paginate results (default 10 per page)
         $articles = $query
             ->summaryFields()
             ->latestPublished()
-            ->paginate($request->get('per_page', 10));
+            ->paginate($request->get('per_page', Article::defaultPerPage()));
 
         return $this->sendResponse($articles, 'Articles fetched successfully', Response::HTTP_OK);
     }
