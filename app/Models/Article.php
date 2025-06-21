@@ -37,7 +37,7 @@ class Article extends Model
     public function scopeSearch($query, $keyword)
     {
         return $query->whereRaw(
-            'MATCH(title, description, content) AGAINST (? IN BOOLEAN MODE)',
+            "MATCH(title, description, content) AGAINST (? IN BOOLEAN MODE)",
             [$keyword]
         );
     }
