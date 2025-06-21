@@ -19,7 +19,7 @@ return new class extends Migration
             $table->longText('content')->nullable();
             $table->string('url')->unique();          // Unique to avoid duplicates
             $table->string('image_url')->nullable();
-            $table->string('source');                 // e.g. NewsAPI, Guardian, NYTimes
+            $table->string('source');                 // e.g. NewsAPI, Guardian, NewYorkTimes
             $table->string('author')->nullable();
             $table->string('category')->nullable();
             $table->timestamp('published_at')->nullable();
@@ -27,6 +27,13 @@ return new class extends Migration
         });
 
         DB::statement('ALTER TABLE articles ADD FULLTEXT fulltext_index (title, description, content)');
+
+        Schema::table('articles', function (Blueprint $table) {
+            $table->index('source');
+            $table->index('category');
+            $table->index('published_at');
+            $table->index('author');
+        });
 
     }
 

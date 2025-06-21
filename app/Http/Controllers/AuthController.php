@@ -14,13 +14,6 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Str;
 
-/**
- * @OA\Info(
- *     title="User Authentication API Documentation",
- *     version="1.0.0",
- *     description="API documentation for the User Authentication API"
- * )
- */
 class AuthController extends Controller
 {
     use ApiResponse;
@@ -44,27 +37,6 @@ class AuthController extends Controller
         return $this->sendResponse($data, $message, Response::HTTP_CREATED);
     }
 
-    /**
-     * @OA\Post(
-     *     path="/api/login",
-     *     summary="Login a user",
-     *     tags={"Auth"},
-     *
-     *     @OA\RequestBody(
-     *         required=true,
-     *
-     *         @OA\JsonContent(
-     *             required={"email","password"},
-     *
-     *             @OA\Property(property="email", type="string", format="email", example="user@example.com"),
-     *             @OA\Property(property="password", type="string", format="password", example="password123")
-     *         )
-     *     ),
-     *
-     *     @OA\Response(response=200, description="Login successful"),
-     *     @OA\Response(response=401, description="Unauthorized")
-     * )
-     */
     public function login(LoginRequest $request)
     {
         $user = User::where('email', $request->email)->first();
@@ -87,7 +59,6 @@ class AuthController extends Controller
         return $this->sendResponse($data, $message, Response::HTTP_OK);
     }
 
-    // Logout
     public function logout(Request $request)
     {
         // Revoke all tokens for this user
@@ -99,7 +70,6 @@ class AuthController extends Controller
         return $this->sendResponse($data, $message, Response::HTTP_OK);
     }
 
-    // Forgot password
     public function sendResetLinkEmail(ForgotPasswordRequest $request)
     {
         $status = Password::sendResetLink(
