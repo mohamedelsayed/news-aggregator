@@ -12,7 +12,95 @@ class ArticleController extends Controller
     use ApiResponse;
 
     /**
-     * List articles with pagination, search, filters.
+     * @OA\Get(
+     *     path="/api/articles",
+     *     summary="List articles with pagination, search, and filters",
+     *     tags={"Articles"},
+     *
+     *     @OA\Parameter(
+     *         name="q",
+     *         in="query",
+     *         description="Search keyword in title/description/content",
+     *         required=false,
+     *
+     *         @OA\Schema(type="string")
+     *     ),
+     *
+     *     @OA\Parameter(
+     *         name="category",
+     *         in="query",
+     *         description="Filter by category",
+     *         required=false,
+     *
+     *         @OA\Schema(type="string")
+     *     ),
+     *
+     *     @OA\Parameter(
+     *         name="source",
+     *         in="query",
+     *         description="Filter by source",
+     *         required=false,
+     *
+     *         @OA\Schema(type="string")
+     *     ),
+     *
+     *     @OA\Parameter(
+     *         name="date",
+     *         in="query",
+     *         description="Filter by published date (YYYY-MM-DD)",
+     *         required=false,
+     *
+     *         @OA\Schema(type="string", format="date")
+     *     ),
+     *
+     *     @OA\Parameter(
+     *         name="per_page",
+     *         in="query",
+     *         description="Number of articles per page (default from config)",
+     *         required=false,
+     *
+     *         @OA\Schema(type="integer", default=10)
+     *     ),
+     *
+     *     @OA\Parameter(
+     *         name="page",
+     *         in="query",
+     *         description="Page number",
+     *         required=false,
+     *
+     *         @OA\Schema(type="integer", default=1)
+     *     ),
+     *
+     *     @OA\Response(
+     *         response=200,
+     *         description="Articles fetched successfully",
+     *
+     *         @OA\JsonContent(
+     *
+     *             @OA\Property(property="success", type="boolean"),
+     *             @OA\Property(property="message", type="string"),
+     *             @OA\Property(property="data", type="object",
+     *                 @OA\Property(property="current_page", type="integer"),
+     *                 @OA\Property(property="data", type="array",
+     *
+     *                     @OA\Items(
+     *
+     *                         @OA\Property(property="id", type="integer"),
+     *                         @OA\Property(property="title", type="string"),
+     *                         @OA\Property(property="description", type="string"),
+     *                         @OA\Property(property="image_url", type="string"),
+     *                         @OA\Property(property="source", type="string"),
+     *                         @OA\Property(property="author", type="string"),
+     *                         @OA\Property(property="category", type="string"),
+     *                         @OA\Property(property="published_at", type="string", format="date-time")
+     *                     )
+     *                 ),
+     *                 @OA\Property(property="last_page", type="integer"),
+     *                 @OA\Property(property="total", type="integer")
+     *             )
+     *         )
+     *     )
+     * )
      */
     public function index(Request $request)
     {
@@ -47,7 +135,54 @@ class ArticleController extends Controller
     }
 
     /**
-     * Show a single article.
+     * @OA\Get(
+     *     path="/api/articles/{id}",
+     *     summary="Get a single article by ID",
+     *     tags={"Articles"},
+     *
+     *     @OA\Parameter(
+     *         name="id",
+     *         in="path",
+     *         description="Article ID",
+     *         required=true,
+     *
+     *         @OA\Schema(type="integer")
+     *     ),
+     *
+     *     @OA\Response(
+     *         response=200,
+     *         description="Article fetched successfully",
+     *
+     *         @OA\JsonContent(
+     *
+     *             @OA\Property(property="success", type="boolean"),
+     *             @OA\Property(property="message", type="string"),
+     *             @OA\Property(property="data", type="object",
+     *                 @OA\Property(property="id", type="integer"),
+     *                 @OA\Property(property="title", type="string"),
+     *                 @OA\Property(property="description", type="string"),
+     *                 @OA\Property(property="content", type="string"),
+     *                 @OA\Property(property="image_url", type="string"),
+     *                 @OA\Property(property="source", type="string"),
+     *                 @OA\Property(property="author", type="string"),
+     *                 @OA\Property(property="category", type="string"),
+     *                 @OA\Property(property="published_at", type="string", format="date-time")
+     *             )
+     *         )
+     *     ),
+     *
+     *     @OA\Response(
+     *         response=404,
+     *         description="Article not found",
+     *
+     *         @OA\JsonContent(
+     *
+     *             @OA\Property(property="success", type="boolean"),
+     *             @OA\Property(property="message", type="string"),
+     *             @OA\Property(property="data", type="array", @OA\Items(type="string"))
+     *         )
+     *     )
+     * )
      */
     public function show(Request $request)
     {
