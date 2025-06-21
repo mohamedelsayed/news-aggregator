@@ -57,7 +57,11 @@
             "@php artisan config:clear --ansi",
             "@php artisan test"
         ],
-        "lint": "pint"
+        "lint": "pint",
+        "migrate": "@php artisan migrate",
+        "migrate:rollback": "@php artisan migrate:rollback",
+        "serve": "@php artisan serve"
+
     },
     "extra": {
         "laravel": {
