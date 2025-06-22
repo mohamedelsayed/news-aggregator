@@ -18,7 +18,7 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->longText('content')->nullable();
             $table->string('url')->unique();          // Unique to avoid duplicates
-            $table->string('image_url')->nullable();
+            $table->text('image_url')->nullable();
             $table->string('source');                 // e.g. NewsAPI, Guardian, NewYorkTimes
             $table->string('author')->nullable();
             $table->string('category')->nullable();

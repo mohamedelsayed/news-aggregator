@@ -5,6 +5,7 @@ namespace App\Services;
 use App\DataSource;
 use App\Models\Article;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log;
 
 class NewsApiFetcher
 {
@@ -17,19 +18,23 @@ class NewsApiFetcher
 
         if ($response->ok()) {
             foreach ($response->json('articles') as $item) {
-                Article::updateOrCreate(
-                    ['url' => $item['url']],
-                    [
-                        'title' => $item['title'],
-                        'description' => $item['description'],
-                        'content' => $item['content'] ?? $item['description'],
-                        'image_url' => $item['urlToImage'],
-                        'source' => DataSource::NEWS_API,
-                        'author' => $item['author'],
-                        'category' => null,
-                        'published_at' => $item['publishedAt'],
-                    ]
-                );
+                try {
+                    Article::updateOrCreate(
+                        ['url' => $item['url']],
+                        [
+                            'title' => $item['title'],
+                            'description' => $item['description'],
+                            'content' => $item['content'] ?? $item['description'],
+                            'image_url' => $item['urlToImage'],
+                            'source' => DataSource::NEWS_API,
+                            'author' => $item['author'],
+                            'category' => null,
+                            'published_at' => $item['publishedAt'],
+                        ]
+                    );
+                } catch (\Exception $e) {
+                    Log::error($e);
+                }
             }
         }
     }

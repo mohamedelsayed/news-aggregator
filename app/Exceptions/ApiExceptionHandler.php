@@ -6,6 +6,7 @@ use Illuminate\Auth\AuthenticationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Validation\ValidationException;
 use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
@@ -15,6 +16,7 @@ class ApiExceptionHandler
 {
     public static function render(Throwable $exception)
     {
+        Log::error($exception);
         if ($exception instanceof QueryException) {
             return response()->json([
                 'message' => 'Internal server error',

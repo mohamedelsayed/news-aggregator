@@ -21,7 +21,7 @@ class FetchArticles extends Command
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Fetch articles from NewsAPI, Guardian, and NewYorkTimes';
 
     /**
      * Execute the console command.

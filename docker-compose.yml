@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  app:
+    build:
+      context: .
+    volumes:
+      - .:/var/www
+      - ./storage:/var/www/storage
+    ports:
+      - "8000:9000"
+    env_file:
+      - .env
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
