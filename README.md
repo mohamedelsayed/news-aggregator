@@ -7,13 +7,13 @@
 - mysql [install guide](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04)
 - copy .env.example to .env and set the correct values
   
-## Setup and Run
+## Setup and run with docker:
 
 ```
 docker-compose up -d --build
 ```
 
-## To stop:
+## To stop docker:
 
 ```
 docker-compose down
@@ -26,6 +26,7 @@ docker-compose exec app php artisan migrate
 ## API Documentation Swagger:
 http://localhost:8000/api/documentation
 
+
 ## Postman Collections with examples:
 https://documenter.getpostman.com/view/46076791/2sB2xBDVva
 
@@ -33,16 +34,16 @@ https://documenter.getpostman.com/view/46076791/2sB2xBDVva
 ```
 php artisan l5-swagger:generate
 ```
-## to run with composer:
+## setup and run with composer:
 ```
 composer install
 composer serve
 ```
-## to check & fix lint: 
+## check & fix lint: 
 ```
 composer lint
 ``` 
-## to run tests:
+## run tests:
 ```
 composer test
 ```
