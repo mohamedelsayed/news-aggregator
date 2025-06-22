@@ -5,14 +5,11 @@ namespace App\Http\Controllers;
 use App\Http\Requests\UserPreferenceRequest;
 use App\Models\Article;
 use App\Models\UserPreference;
-use App\Traits\ApiResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
 class UserPreferenceController extends Controller
 {
-    use ApiResponse;
-
     /**
      * @OA\Get(
      *     path="/api/user-preferences",

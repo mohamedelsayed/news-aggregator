@@ -3,14 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
-use App\Traits\ApiResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
 class ArticleController extends Controller
 {
-    use ApiResponse;
-
     /**
      * @OA\Get(
      *     path="/api/articles",

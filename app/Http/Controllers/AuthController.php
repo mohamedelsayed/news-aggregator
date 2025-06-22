@@ -7,7 +7,6 @@ use App\Http\Requests\Auth\LoginRequest;
 use App\Http\Requests\Auth\RegisterRequest;
 use App\Http\Requests\Auth\ResetPasswordRequest;
 use App\Models\User;
-use App\Traits\ApiResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Hash;
@@ -16,8 +15,6 @@ use Illuminate\Support\Str;
 
 class AuthController extends Controller
 {
-    use ApiResponse;
-
     /**
      * @OA\Post(
      *     path="/api/register",
