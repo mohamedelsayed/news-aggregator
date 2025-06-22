@@ -1,4 +1,4 @@
-# news-aggregator
+# News Aggregator
 
 ## Dependencies:
 
@@ -18,33 +18,32 @@ docker-compose up -d --build
 ```
 docker-compose down
 ```
-## Run Migrations
+## Run migrations
 
 ```
 docker-compose exec app php artisan migrate
 ```
-## API Documentation Swagger:
+## API documentation swagger:
 http://localhost:8000/api/documentation
 
 
-## Postman Collections with examples:
+## Postman collections with examples:
 https://documenter.getpostman.com/view/46076791/2sB2xBDVva
 
-## to regenerate swagger docs:
+## Regenerate swagger docs "only if you have changed the api":
 ```
 php artisan l5-swagger:generate
 ```
-## setup and run with composer:
+## Setup and run with composer:
 ```
 composer install
 composer serve
 ```
-## check & fix lint: 
+## Check & fix lint: 
 ```
 composer lint
 ``` 
-## run tests:
+## Run tests:
 ```
 composer test
-```
-## 
+``` 
