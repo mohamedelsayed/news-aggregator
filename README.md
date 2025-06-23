@@ -1,5 +1,5 @@
 # News Aggregator
-
+This project provides a RESTful API to fetch, store, and serve news articles from multiple sources. Includes user registration/login, preference management, and protection against common web vulnerabilities. Ready to run via Docker.
 ## Dependencies:
 
 - docker [install guide](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04)
