@@ -49,7 +49,7 @@ composer lint
 ```
 composer test
 ``` 
-## test coverage:
+## Test coverage result:
 ![Coverage](docs/coverage.png)
 
 ## Security measures:
