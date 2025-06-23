@@ -5,13 +5,15 @@
 - docker [install guide](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04)
 - docker-compose [install guide](https://linuxhostsupport.com/blog/how-to-install-and-configure-docker-compose-on-ubuntu-20-04/)
 - mysql [install guide](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04)
-- copy .env.example to .env and set the correct values
+- php 8.2
+- copy .env.example to .env & .env.testing and set the correct values
   
 ## Setup and run with docker:
 
 ```
 docker-compose up -d --build
 ```
+The app will be available at: http://localhost:8000
 
 ## To stop docker:
 
@@ -50,4 +52,7 @@ composer test
 ## test coverage:
 ![Coverage](docs/coverage.png)
 
-    
+## Security measures:
+- All sensitive routes are protected with Laravel Sanctum authentication.
+- Basic rate limiting is applied on API endpoints.
+- XSS filtering is applied on input data.
