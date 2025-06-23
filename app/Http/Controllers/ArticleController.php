@@ -74,7 +74,6 @@ class ArticleController extends Controller
      *
      *         @OA\JsonContent(
      *
-     *             @OA\Property(property="success", type="boolean"),
      *             @OA\Property(property="message", type="string"),
      *             @OA\Property(property="data", type="object",
      *                 @OA\Property(property="current_page", type="integer"),
@@ -152,7 +151,6 @@ class ArticleController extends Controller
      *
      *         @OA\JsonContent(
      *
-     *             @OA\Property(property="success", type="boolean"),
      *             @OA\Property(property="message", type="string"),
      *             @OA\Property(property="data", type="object",
      *                 @OA\Property(property="id", type="integer"),
@@ -174,7 +172,6 @@ class ArticleController extends Controller
      *
      *         @OA\JsonContent(
      *
-     *             @OA\Property(property="success", type="boolean"),
      *             @OA\Property(property="message", type="string"),
      *             @OA\Property(property="data", type="array", @OA\Items(type="string"))
      *         )

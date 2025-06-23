@@ -23,7 +23,6 @@ class UserPreferenceController extends Controller
      *
      *         @OA\JsonContent(
      *
-     *             @OA\Property(property="success", type="boolean"),
      *             @OA\Property(property="message", type="string"),
      *             @OA\Property(property="data", type="object",
      *                 @OA\Property(property="sources", type="array", @OA\Items(type="string")),
@@ -65,7 +64,6 @@ class UserPreferenceController extends Controller
      *
      *         @OA\JsonContent(
      *
-     *             @OA\Property(property="success", type="boolean"),
      *             @OA\Property(property="message", type="string"),
      *             @OA\Property(property="data", type="object",
      *                 @OA\Property(property="sources", type="array", @OA\Items(type="string")),
@@ -117,7 +115,6 @@ class UserPreferenceController extends Controller
      *
      *         @OA\JsonContent(
      *
-     *             @OA\Property(property="success", type="boolean"),
      *             @OA\Property(property="message", type="string"),
      *             @OA\Property(property="data", type="object",
      *                 @OA\Property(property="current_page", type="integer"),
@@ -147,7 +144,6 @@ class UserPreferenceController extends Controller
      *
      *         @OA\JsonContent(
      *
-     *             @OA\Property(property="success", type="boolean"),
      *             @OA\Property(property="message", type="string"),
      *             @OA\Property(property="data", type="array", @OA\Items(type="string"))
      *         )

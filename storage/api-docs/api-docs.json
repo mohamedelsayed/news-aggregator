@@ -89,9 +89,6 @@
                             "application/json": {
                                 "schema": {
                                     "properties": {
-                                        "success": {
-                                            "type": "boolean"
-                                        },
                                         "message": {
                                             "type": "string"
                                         },
@@ -176,9 +173,6 @@
                             "application/json": {
                                 "schema": {
                                     "properties": {
-                                        "success": {
-                                            "type": "boolean"
-                                        },
                                         "message": {
                                             "type": "string"
                                         },
@@ -227,9 +221,6 @@
                             "application/json": {
                                 "schema": {
                                     "properties": {
-                                        "success": {
-                                            "type": "boolean"
-                                        },
                                         "message": {
                                             "type": "string"
                                         },
@@ -293,9 +284,6 @@
                             "application/json": {
                                 "schema": {
                                     "properties": {
-                                        "success": {
-                                            "type": "boolean"
-                                        },
                                         "message": {
                                             "type": "string"
                                         },
@@ -371,9 +359,6 @@
                             "application/json": {
                                 "schema": {
                                     "properties": {
-                                        "success": {
-                                            "type": "boolean"
-                                        },
                                         "message": {
                                             "type": "string"
                                         },
@@ -412,9 +397,6 @@
                             "application/json": {
                                 "schema": {
                                     "properties": {
-                                        "success": {
-                                            "type": "boolean"
-                                        },
                                         "message": {
                                             "type": "string"
                                         },
@@ -447,9 +429,6 @@
                             "application/json": {
                                 "schema": {
                                     "properties": {
-                                        "success": {
-                                            "type": "boolean"
-                                        },
                                         "message": {
                                             "type": "string"
                                         },
@@ -507,9 +486,6 @@
                             "application/json": {
                                 "schema": {
                                     "properties": {
-                                        "success": {
-                                            "type": "boolean"
-                                        },
                                         "message": {
                                             "type": "string"
                                         },
@@ -531,9 +507,6 @@
                             "application/json": {
                                 "schema": {
                                     "properties": {
-                                        "success": {
-                                            "type": "boolean"
-                                        },
                                         "message": {
                                             "type": "string"
                                         },
@@ -603,9 +576,6 @@
                             "application/json": {
                                 "schema": {
                                     "properties": {
-                                        "success": {
-                                            "type": "boolean"
-                                        },
                                         "message": {
                                             "type": "string"
                                         },
@@ -627,9 +597,6 @@
                             "application/json": {
                                 "schema": {
                                     "properties": {
-                                        "success": {
-                                            "type": "boolean"
-                                        },
                                         "message": {
                                             "type": "string"
                                         },
@@ -662,9 +629,6 @@
                             "application/json": {
                                 "schema": {
                                     "properties": {
-                                        "success": {
-                                            "type": "boolean"
-                                        },
                                         "message": {
                                             "type": "string"
                                         },
@@ -759,9 +723,6 @@
                             "application/json": {
                                 "schema": {
                                     "properties": {
-                                        "success": {
-                                            "type": "boolean"
-                                        },
                                         "message": {
                                             "type": "string"
                                         },
@@ -838,9 +799,6 @@
                             "application/json": {
                                 "schema": {
                                     "properties": {
-                                        "success": {
-                                            "type": "boolean"
-                                        },
                                         "message": {
                                             "type": "string"
                                         },
@@ -903,9 +861,6 @@
                             "application/json": {
                                 "schema": {
                                     "properties": {
-                                        "success": {
-                                            "type": "boolean"
-                                        },
                                         "message": {
                                             "type": "string"
                                         },
