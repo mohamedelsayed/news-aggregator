@@ -48,13 +48,6 @@ composer lint
 composer test
 ``` 
 ## test coverage:
-```
-php artisan test --coverage
-```
-## test coverage html:
-```
-php artisan test --coverage-html storage/coverage
-```
 ![Coverage](docs/coverage.png)
 
     
